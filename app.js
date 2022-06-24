@@ -10,7 +10,7 @@ const ejs=require("ejs")
 const app = express();
 
 //connect mongoDB
-mongoose.connect('mongodb://0.0.0.0:27017/AgencyProject',{
+mongoose.connect('mongodb+srv://umutbozbek:ZiNkPvpulc6TWuYA@cluster0.xgrzgu9.mongodb.net/agency-db?retryWrites=true&w=majority',{
   
 }).then(()=>{
   console.log('DB CONNECTED!');
@@ -36,7 +36,7 @@ app.use('/',pageRoute)
 app.use('/',portfolioRoute)
 
 
-const port=3000
+const port = process.env.PORT || 5000
 
 app.listen(port,()=>{
     console.log(`Sunucu ${port} portunda başlatıldı`);
