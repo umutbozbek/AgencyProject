@@ -1,0 +1,73 @@
+<%- include('partials/_header') %>
+<%- include('partials/_navigation') %>
+
+
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Edit Portfolio</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+        <!-- to get an API token!-->
+        <form id="contactForm"  action="/edit/<%= portfolio._id %>?_method=PUT" method="POST">
+            <div class="row align-items-stretch mb-5">
+                <div class="col-md-6 mx-auto">
+                    <div class="form-group">
+                        <!-- Name input-->
+                        <input class="form-control" id="name" type="text" placeholder="<%=portfolio.name %>" name="name" />
+                        <div class="invalid-feedback" data-sb-feedback="name:required"></div>
+                    </div>
+                    <div class="form-group">
+                        <!-- Category input-->
+                        <input class="form-control" name="category" id="email" type="text" placeholder="<%=portfolio.category %> "/>
+ 
+                    </div>
+                
+                    <div class="form-group mb-md-0 flex" >
+                        <!-- Send-->
+                        <button type="submit" class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit"><span>Update</span></button>
+                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                 
+                        
+                            <a href="/edit/<%= portfolio._id %>?_method=DELETE" class="btn btn-danger p-0 tm-btn-animate tm-btn-download tm-icon-download"
+                                
+                            onclick="return confirm('Silmek istediğinizden emin misiniz?')"	><span>Delete Photo</span></a>	
+                        	
+                    </div>
+
+                </div>
+                
+            
+            </div>
+            <!-- Submit success message-->
+            <!---->
+            <!-- This is what your users will see when the form-->
+            <!-- has successfully submitted-->
+            <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center text-white mb-3">
+                    <div class="fw-bolder">Form submission successful!</div>
+                    To activate this form, sign up at
+                    <br />
+                    <a href="/https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                </div>
+            </div>
+            <!-- Submit error message-->
+            <!---->
+            <!-- This is what your users will see when there is-->
+            <!-- an error submitting the form-->
+            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+            <!-- Submit Button-->
+
+        </form>
+	
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<%- include('partials/_footer') %>
